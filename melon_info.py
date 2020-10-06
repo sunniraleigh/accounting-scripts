@@ -4,15 +4,15 @@
 from melons import melons_info
 
 
-def print_melon(name, seedless, price):
+def print_melon(info_log):
     """Print each melon with corresponding attribute information."""
+    for melon in info_log:
+        print(f"{info_log[melon]}",
+        f"price: {info_log[melon][price]}",
+        f"seedless: {info_log[melon][seedless]}",
+        f"flesh_color: {info_log[melon][flesh_color]}",
+        f"weight: {info_log[melon][weight]}",
+        f"rind_color: {info_log[melon][rind_color]}"
+        )
 
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
-
-    print(f'{name}s {have_or_have_not} seeds and are ${price:.2f}')
-
-
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+print_melon(melons_info)
